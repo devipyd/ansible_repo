@@ -1,0 +1,12 @@
+---
+- name: install multiple packages
+  hosts: all
+  become: true
+  gather_facts: yes
+
+  tasks:
+  - name: uninstall multiple packages packages
+    yum:
+      name: [ 'wget', 'tree', 'telnet', ]
+      state: absent
+
