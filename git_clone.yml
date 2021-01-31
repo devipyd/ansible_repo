@@ -1,0 +1,11 @@
+---
+- name: cloning repo
+  hosts: webservers
+  gather_facts: no
+  vars_files:
+      - vault2.yml    
+  tasks:
+  - name: cloning module
+    git: 
+      repo: https://devipyd:{{ git_password }}@github.com/devipyd/vaultrepo.git
+      dest: /home/ansadmin/vaulttest    
